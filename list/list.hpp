@@ -71,7 +71,7 @@ public:
 				pnode = pnode->getNext();
 			return *this;
 		}
-		iterator &operator--(int) {
+		iterator operator--(int) {
 			iterator temp(*this);
 			if (pnode != NULL)
 				pnode = pnode->getPrev();
@@ -91,6 +91,7 @@ public:
 		}
 		iterator &operator=(const iterator &iter) {
 			pnode = iter.pnode;
+			return *this;
 		}
 		bool operator==(const node &node) {
 			return pnode == &node;
